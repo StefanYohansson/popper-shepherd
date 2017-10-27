@@ -1,0 +1,33 @@
+{
+  "name": "popper-shepherd",
+  "version": "1.0.0",
+  "description": "Guide your users using popper.",
+  "main": "package/index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StefanYohansson/popper-shepherd.git"
+  },
+  "keywords": [
+    "popper",
+    "tour",
+    "guide"
+  ],
+  "author": "StefanYohansson <snotr@sadfeelings.me>",
+  "license": "GPL",
+  "bugs": {
+    "url": "https://github.com/StefanYohansson/popper-shepherd/issues"
+  },
+  "homepage": "https://github.com/StefanYohansson/popper-shepherd#readme",
+  "dependencies": {
+    "popper.js": "^1.12.5"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "jsdom": "11.3.0",
+    "jsdom-global": "3.0.2",
+    "mocha": "^4.0.1"
+  }
+}
