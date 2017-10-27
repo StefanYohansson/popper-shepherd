@@ -3,7 +3,7 @@ var assert = require('chai').assert;
 var Popper = require('popper.js');
 window.Popper = Popper;
 global.Popper = Popper;
-var Shepherd = require('../package/index.js');
+var Shepherd = require('../package/popper-shepherd.js');
 
 function newTour() {
   return Shepherd.of();
