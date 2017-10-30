@@ -23,18 +23,37 @@ function addStep(step) {
 }
 Tour.prototype.addStep = addStep;
 
+function addOverlay() {
+  var overlay = document.createElement('div');
+  overlay.id = "tour-overlay";
+  document.body.appendChild(overlay);
+}
+Tour.prototype.addOverlay = addOverlay;
+
+function removeOverlay() {
+  var overlay = document.getElementById('tour-overlay');
+  document.body.removeChild(overlay);
+}
+Tour.prototype.removeOverlay = removeOverlay;
+
 function run(step) {
   var newDiv = document.createElement("div");
+  var placement = step.attachTo['position'];
   var newContent = document.createTextNode("Hi there and greetings!");
+  newDiv.classList.add('popper-container', placement);
   newDiv.appendChild(newContent);
   step.element = newDiv;
+  step.attachTo['element'].classList.add('current-step');
+  // TODO: remove 'current-step' classes when move on
+  // and use this.removeOverlay() when the tour is finished
   var popper = new Popper(
     step.attachTo['element'],
     step.element,
     {
-      placement: step.attachTo['position']
+      placement: placement 
     }
   );
+  this.addOverlay();
   document.body.appendChild(step.element);
 }
 Tour.prototype.run = run;
