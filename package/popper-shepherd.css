@@ -1,0 +1,62 @@
+#tour-overlay {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0px;
+  z-index: 10;
+  background: rgba(0,0,0,0.7);
+}
+.popper-container {
+  background: white;
+  padding: 10px;
+  margin: 15px;
+  border-radius: 5px;
+  z-index: 20;
+}
+.popper-container.bottom::after {
+  content: '';
+  position: absolute;
+  margin-top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom: 10px solid white;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+}
+.popper-container.top::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top: 10px solid white;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+
+}
+.popper-container.right::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -10px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid white;
+
+}
+.popper-container.left::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -10px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid white;
+
+}
+.current-step {
+  position: relative;
+  z-index: 20;
+}
